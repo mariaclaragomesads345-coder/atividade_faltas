@@ -1,0 +1,11 @@
+horas_texto = input("Digite a quantia de horas: ")
+try:
+horas = float(horas_texto)
+if horas < 0:
+print("por favor, insira um numero válido.")
+else:
+
+  minutos = horas * 60
+  print(f"{minutos} minutos")
+except ValueError:
+    print("por favor, insira apenas numeros.")

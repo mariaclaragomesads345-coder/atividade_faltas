@@ -1,0 +1,12 @@
+import socket
+servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+servidor.bind(('localhost', 5000))
+servidor.listen( )
+print("SERVIDOR INICIADO! AGUARDANDO CONEXÃO...")
+cliente, endereco = servidor.accept()
+print(f"[+] Conexão estabelecida com {endereco}")
+mensagem = cliente.recv(1024).decode('utf-8')
+print(f"[+] Mensagem recebida do cliente: {mensagem}")
+cliente.send("Conexão estabelecida com sucesso!".encode('utf-8'))
+cliente.close()
+servidor.close()
